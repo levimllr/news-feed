@@ -43,32 +43,17 @@ function createArticleHtml(articleArray) {
   }
 }
 
+// getArticles on page load!
 getArticles();
 
 // make something happen when we scroll in the document
-document.addEventListener('scroll', throttle(handleScroll, 1000));
+
 
 // handle the scroll by making sure it's near the bottom of the page
-function handleScroll() {
-  if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 300)) {
-    getArticles();
-  }
-}
+
 
 // throttle the calls to getArticles by making a passed-in function only callable once during a given time interval
-function throttle(func, interval) {
-  let throttled = false;
-  return function() {
-    if (!throttled) {
-      func();
-      throttled = true;
-      console.log('Throttled!');
-      setTimeout(() => throttled = false, interval);
-    };
-  };
-};
+
 
 // debounce: only call function once some time after the last of multiple, identical events are "heard" by a listener
-function debounce(func, interval) {
 
-}

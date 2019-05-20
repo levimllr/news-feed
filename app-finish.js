@@ -70,5 +70,10 @@ function throttle(func, interval) {
 
 // debounce: only call function once some time after the last of multiple, identical events are "heard" by a listener
 function debounce(func, interval) {
-
-}
+  let debounced;
+  return function () {
+    clearTimeout(debounced);
+    console.log('Debounced!')
+    debounced = setTimeout(func, interval);
+  };
+};
