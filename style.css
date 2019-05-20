@@ -22,9 +22,9 @@
 }
 
 .articleImg img {
-    max-height: auto;
+    height: 250px;
     width: 300px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .articleTxt {
